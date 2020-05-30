@@ -1,0 +1,26 @@
+<div class="container">
+
+    <table class="table">
+<tr>
+<th>ID</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th></th>
+<th></th>
+</tr>
+
+<tr *ngFor="let std of students">
+<td>{{std.sid}}</td>
+<td>{{std.fname}}</td>
+<td>{{std.lname}}</td>
+<td>{{std.email}}</td>
+<td><button type="button" class="btn btn-success" (click)="edit(std)">Edit</button></td>
+<td><button type="button" class="btn btn-danger" (click)="delete(std)">Delete</button></td>
+</tr>
+ </table>
+
+
+<div>
+    <a routerLink="/add" class="btn btn-primary">Add New Student</a>
+</div></div>

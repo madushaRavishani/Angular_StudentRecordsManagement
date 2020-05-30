@@ -1,0 +1,54 @@
+<div class="col-md-6">
+  
+    <h2 class="text-center">Edit Students</h2>
+      <form [formGroup]= "addForm" novalidate class="form">
+         
+    <input type= "hidden" formControlName="sid" name="sid">
+ 
+          <div class="alert alert-danger" *ngIf="addForm.get('fname').hasError('required') && addForm.get('fname').touched">
+              Please fill your first name
+          </div>
+          
+          
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" formControlName="fname" placeholder="Enter First Name" name="fname" class="form-control"> 
+          </div>
+        
+          <div class="alert alert-danger" *ngIf="addForm.get('lname').hasError('required') && addForm.get('lname').touched">
+              Please fill your last name
+          </div>
+          <div class="alert alert-danger" *ngIf="addForm.get('lname').hasError('maxlength') && addForm.get('lname').touched">
+              Maximum 10 characters are allowed
+          </div>
+          
+          
+          
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" formControlName="lname" placeholder="Enter Last Name" name="lname" class="form-control"> 
+          </div>
+        
+          <div class="alert alert-danger" *ngIf="addForm.get('email').hasError('required') && addForm.get('email').touched">
+              Please fill your email
+          </div>
+          
+          <div class="alert alert-danger" *ngIf="addForm.get('email').hasError('maxlength') && addForm.get('email').touched">
+              Maximum 20 characters are allowed
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" formControlName="email" placeholder="Enter email" name="email" class="form-control"> 
+          </div>
+    
+      <button class="btn btn-success" (click)="update()">Update</button>
+      </form>
+      <div>
+        <a routerLink="/view" class="btn btn-primary">View Students</a>
+    </div>
+    </div>
+    
+    
+    <router-outlet></router-outlet>  
+  
